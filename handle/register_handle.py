@@ -24,14 +24,17 @@ class RegisterHandle(object):
 
     # 获取文字信息
     def get_user_text(self, info, user_info):
-        if info == 'email_error':
-            text = self.register_p.get_email_error_element().get_attribute('value')
-        elif info == 'name_error':
-            text = self.register_p.get_name_error_element().get_attribute('value')
-        elif info == 'password_error':
-            text = self.register_p.get_password_error_element().get_attribute('value')
-        else:
-            text = self.register_p.get_code_error_element().get_attribute('value')
+        try:
+            if info == 'email_error':
+                text = self.register_p.get_email_error_element().text
+            elif info == 'name_error':
+                text = self.register_p.get_name_error_element().text
+            elif info == 'password_error':
+                text = self.register_p.get_password_error_element().text
+            else:
+                text = self.register_p.get_code_error_element().text
+        except:
+            text = None
         return text
 
     # 点击注册按钮
