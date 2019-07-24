@@ -1,9 +1,11 @@
 #coding=utf-8
 from page.register_page import RegisterPage
+from util.get_code import GetCode
 
 
 class RegisterHandle(object):
     def __init__(self, driver):
+        self.driver = driver
         self.register_p = RegisterPage(driver)
 
     # 输入邮箱
@@ -19,7 +21,9 @@ class RegisterHandle(object):
         self.register_p.get_password_element().send_keys(password)
 
     # 输入验证码
-    def send_user_code(self, code):
+    def send_user_code(self, file_name):
+        get_code_text = GetCode(self.driver)
+        code = get_code_text.code_online(file_name)
         self.register_p.get_code_element().send_keys(code)
 
     # 获取文字信息

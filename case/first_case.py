@@ -1,11 +1,15 @@
 # coding=utf-8
-import sys
-sys.path.append('D:\\ImoocSelenium')
-from business.register_business import RegisterBusiness
 from selenium import webdriver
+from business.register_business import RegisterBusiness
+import sys
+sys.path.append('F:\\ImoocSelenium')
+import time
 import unittest
 import HTMLTestRunner
 import os
+curPath = os.path.abspath(os.path.join(os.getcwd()))
+sys.path.append(curPath)
+# print(os.getcwd())
 
 
 class FirstCase(unittest.TestCase):
@@ -16,7 +20,16 @@ class FirstCase(unittest.TestCase):
         self.login = RegisterBusiness(self.driver)
 
     def tearDown(self):
+        time.sleep(2)
+        for method_name, error in self._outcome.errors:
+            if error:
+                case_name = self._testMethodName
+                # file_path = os.path.join(os.getcwd() + '/report/' + case_name + '.png')
+                file_path = '../report/' + case_name + '.png'
+                self.driver.save_screenshot(file_path)
+
         self.driver.quit()
+
 
     def test_login_email_error(self):
         email_error = self.login.login_email_error('34', 'user111', '111111', 'test1')
@@ -39,7 +52,7 @@ class FirstCase(unittest.TestCase):
 
     def test_login_code_error(self):
         code_error = self.login.login_code_error('763157@163.com', 'aa111', '111111', 'xxxxx')
-        self.assertTrue(code_error)
+        self.assertFalse(code_error)
         # if code_error == True:
         #     print('注册成功，此条case执行失败')
 
@@ -55,13 +68,18 @@ class FirstCase(unittest.TestCase):
 
 if __name__ == '__main__':
     # file_path = os.path.join(os.getcwd() + "/report/" + "first_case.html")
-    file_path = '../report/first_case.html'
-    f = open(file_path, 'wb')
+    # file_path = '../report/first_case.html'
+    # f = open(file_path, 'wb')
     suite = unittest.TestSuite()
     suite.addTest(FirstCase('test_login_success'))
+    # suite.addTest(FirstCase('test_login_email_error'))
+    unittest.TextTestRunner().run(suite)
 
-    runner = HTMLTestRunner.HTMLTestRunner(stream=f, title='This is first report', description=u'这是我们第一次测试报告', verbosity=2)
-    runner.run(suite)
+    # runner = HTMLTestRunner.HTMLTestRunner(stream=f, title='This is first report',\
+    #                                        description=u'这是我们第一次测试报告', verbosity=2)
+    # runner.run(suite)
+
+    # 123456
 
 
 
