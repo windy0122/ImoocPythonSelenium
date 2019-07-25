@@ -1,7 +1,9 @@
 # coding=utf-8
-from handle.register_handle import RegisterHandle
+
+
 import sys
 sys.path.append('F:\\ImoocSelenium')
+from handle.register_handle import RegisterHandle
 
 
 class RegisterBusiness(object):

@@ -2,7 +2,7 @@
 
 
 import sys
-sys.path.append('F:\\ImoocSelenium')
+sys.path.append('../../ImoocSelenium')
 from selenium import webdriver
 from business.register_business import RegisterBusiness
 import time
@@ -59,7 +59,7 @@ class FirstCase(unittest.TestCase):
         #     print('注册成功，此条case执行失败')
 
     def test_login_success(self):
-        success = self.login.user_base('663355041@qq.com', 'ss123', '111111', 'test1')
+        success = self.login.user_base('663355041@qq.com', 'ss123', '111111', '../test02.png')
         self.assertFalse(success)
         # if self.login.register_succes() == True:
         #     print('注册成功')
@@ -73,8 +73,8 @@ if __name__ == '__main__':
     # file_path = '../report/first_case.html'
     # f = open(file_path, 'wb')
     suite = unittest.TestSuite()
-    suite.addTest(FirstCase('test_login_success'))
-    # suite.addTest(FirstCase('test_login_email_error'))
+    # suite.addTest(FirstCase('test_login_success'))
+    suite.addTest(FirstCase('test_login_email_error'))
     unittest.TextTestRunner().run(suite)
 
     # runner = HTMLTestRunner.HTMLTestRunner(stream=f, title='This is first report',\
