@@ -1,12 +1,17 @@
 # coding=utf-8
-from business.register_business import RegisterBusiness
-from selenium import webdriver
+
+
 import sys
+sys.path.append('F:\\ImoocSelenium')
+from selenium import webdriver
+from business.register_business import RegisterBusiness
 import time
-sys.path.append('D:\\ImoocSelenium')
 import unittest
 import HTMLTestRunner
 import os
+curPath = os.path.abspath(os.path.join(os.getcwd()))
+sys.path.append(curPath)
+# print(os.getcwd())
 
 
 class FirstCase(unittest.TestCase):
@@ -68,14 +73,14 @@ if __name__ == '__main__':
     # file_path = '../report/first_case.html'
     # f = open(file_path, 'wb')
     suite = unittest.TestSuite()
-    # suite.addTest(FirstCase('test_login_success'))
-    suite.addTest(FirstCase('test_login_email_error'))
+    suite.addTest(FirstCase('test_login_success'))
+    # suite.addTest(FirstCase('test_login_email_error'))
     unittest.TextTestRunner().run(suite)
 
     # runner = HTMLTestRunner.HTMLTestRunner(stream=f, title='This is first report',\
     #                                        description=u'这是我们第一次测试报告', verbosity=2)
     # runner.run(suite)
-    
+
     # 123456
 
 
