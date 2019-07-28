@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>This is first report</title>
+    <title>This is first report1</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -188,12 +188,12 @@ function showOutput(id, name) {
 --></script>
 
 <div class='heading'>
-<h1>This is first report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2019-07-21 22:30:03</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:38.704864</p>
-<p class='attribute'><strong>Status:</strong> Pass 1</p>
+<h1>This is first report1</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-07-28 13:07:50</p>
+<p class='attribute'><strong>Duration:</strong> 0:02:12.689299</p>
+<p class='attribute'><strong>Status:</strong> Pass 4 Failure 2</p>
 
-<p class='description'>这是我们第一次测试报告</p>
+<p class='description'>这是我们第一次测试报告1</p>
 </div>
 
 
@@ -221,25 +221,112 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
-    <td>FirstCase</td>
-    <td>1</td>
-    <td>1</td>
+<tr class='failClass'>
+    <td>FirstDdtCase</td>
+    <td>6</td>
+    <td>4</td>
+    <td>2</td>
     <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',6)">Detail</a></td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login_success</div></td>
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_register_case_1___test0000001_qq_com____wudi1____111111____code____user_email_error____请输入有效的电子邮件地址__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "first_ddt.py", line 50, in test_register_case
+    self.assertFalse(email_error, '测试失败')
+AssertionError: True is not false : 测试失败
+Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "first_ddt.py", line 50, in test_register_case
+    self.assertFalse(email_error, '测试失败')
+AssertionError: True is not false : 测试失败
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_register_case_2___test045645qq_com____wudi2____111112____code____user_email_error____请输入有效的电子邮件地址__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_register_case_3___test72575203_____wudi3____111113____code____user_email_error____请输入有效的电子邮件地址__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_register_case_4___test75275204__com____wudi4____111114____code____user_email_error____请输入有效的电子邮件地址__</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='ft1.5' class='none'>
+    <td class='failCase'><div class='testcase'>test_register_case_5___test75275205_qqcom____wudi5____111115____code____user_email_error____请输入有效的电子邮件地址__</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
+        fail</a>
+
+    <div id='div_ft1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.5: Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "first_ddt.py", line 50, in test_register_case
+    self.assertFalse(email_error, '测试失败')
+AssertionError: True is not false : 测试失败
+Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\ddt.py", line 145, in wrapper
+    return func(self, *args, **kwargs)
+  File "first_ddt.py", line 50, in test_register_case
+    self.assertFalse(email_error, '测试失败')
+AssertionError: True is not false : 测试失败
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_register_case_6___test72572706_qq_____wudi6____111116____code____user_email_error____请输入有效的电子邮件地址__</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
+    <td>6</td>
+    <td>4</td>
+    <td>2</td>
     <td>0</td>
     <td>&nbsp;</td>
 </tr>

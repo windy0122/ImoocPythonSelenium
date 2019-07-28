@@ -21,17 +21,20 @@ class RegisterHandle(object):
         self.register_p.get_password_element().send_keys(password)
 
     # 输入验证码
-    def send_user_code(self, file_name):
-        get_code_text = GetCode(self.driver)
-        code = get_code_text.code_online(file_name)
-        self.register_p.get_code_element().send_keys(code)
+    # def send_user_code(self, file_name):
+    #     get_code_text = GetCode(self.driver)
+    #     code_text = get_code_text.code_online(file_name)
+    #     self.register_p.get_code_element().send_keys(code_text)
+
+    def send_user_code(self, code_text):
+        self.register_p.get_code_element().send_keys(code_text)
 
     # 获取文字信息
     def get_user_text(self, info, user_info):
         try:
-            if info == 'email_error':
+            if info == 'user_email_error':
                 text = self.register_p.get_email_error_element().text
-            elif info == 'name_error':
+            elif info == 'user_name_error':
                 text = self.register_p.get_name_error_element().text
             elif info == 'password_error':
                 text = self.register_p.get_password_error_element().text
